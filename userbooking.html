@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Waterway Reservation</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+            <style>
+/* Full-width card styling */
+.feature-item {
+    display: flex;
+    flex-direction: row; /* Change to row for horizontal layout */
+    width: 80vw; /* Full viewport width */
+    max-width: 100%; /* Ensure no overflow */
+    margin: 0 auto; /* Center horizontally */
+    box-sizing: border-box; /* Include padding in width calculation */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px; /* Add padding inside the card */
+    background: #fff; /* White background for contrast */
+}
+
+/* Adjust image inside the card */
+.feature-icon {
+    margin-right: 15px; /* Space between image and text */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.feature-icon img {
+    max-width: 100px; /* Limit image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Adjust card content */
+.feature-content {
+    display: flex;
+    flex-direction: column; /* Keep content layout as column */
+    justify-content: center; /* Center vertically */
+}
+
+/* Style for card title and text */
+.feature-content h5 {
+    font-size: 1.25rem; /* Slightly larger title font */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.feature-content p {
+    font-size: 1rem; /* Text font size */
+    margin-bottom: 15px; /* Space below the text */
+}
+
+.btn-primary {
+    align-self: flex-start; /* Align button to start */
+    margin-top: auto; /* Push button to bottom of the content */
+}
+
+
+/* Hide Owl Carousel navigation arrows */
+.owl-nav {
+    display: none !important;
+}
+        /* CSS Styles for Navbar */
+   
+        /* Sidebar */
+        #sidebar {
+            height: 100%;
+            width: 250px; /* Initial width */
+            position: fixed;
+            top: 0;
+            left: -250px; /* Initially hidden */
+            z-index: 1000;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        #sidebar .sidebar-content {
+            padding: 26px;
+            color: #15b9d9;
+        }
+
+        /* Profile icon button */
+        #logo {
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            color:#15b9d9;
+            margin-right: 20px;
+            
+        }
+
+        /* Close button inside the sidebar */
+        #sidebar .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+        
+        a.linker{
+            color:white;
+        }
+</style>
+
+    </head>
+    
+    <body>
+   <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+<!-- Spinner End -->
+
+<!-- Topbar Start -->
+<div class="container-fluid bg-dark px-5 d-none d-lg-block">
+            <div class="row gx-0 align-items-center" style="height: 45px;">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Kerala</a>
+                        <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+91 9497384572</a>
+                        <a href="#" class="text-light me-0"><i class="fas fa-envelope text-primary me-2"></i>enquiriesdeepak@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+        
+
+
+<!-- Navbar & Hero Start -->
+<div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+            
+                    <div id="logo" class="d-flex align-items-center" style="color: white;">
+                        <img src="img/blueicon.jpg" alt="User Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+                        <h5>Username</h5>
+                    </div>
+                
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>   <div class="d-flex flex-grow-1 justify-content-end align-items-center pe-5">
+            <h3 class="text-primary m-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-star-of-life me-3"></i>Waterway</h3>
+            </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+              
+                    <a href="#carousel" class="nav-item nav-link ">Home&nbsp;&nbsp;</a>
+                   <!-- <a href="userbooking.php" class="nav-item nav-link <?php echo in_array($current_page, ['userbooking.php', 'seatview.php',]) ? 'active' : ''; ?>">&nbsp;Book&nbsp;</a>-->
+                    <!--<a href="view_bookings.php" class="nav-item nav-link <?php echo $current_page == 'view_bookings.php' ? 'active' : ''; ?>">History</a> -->
+                <a href="userbooking.html" class="nav-item nav-link ">Book </a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle >" data-bs-toggle="dropdown">Others</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="#feedback" class="dropdown-item">Contact</a>
+                            <a href="#whyus" class="dropdown-item">Why Us?</a>
+                            
+                            <a href="#testimonials" class="dropdown-item">Reviews</a>
+                            <a href="#blogs" class="dropdown-item">Blogs</a>
+                           <!-- <a href="team.php" class="dropdown-item">Our Team </a>-->
+                            <a href="chatbot.html" class="dropdown-item">waterway AI </a>
+                            </div>
+                    </div>
+                </div>
+                    <a href="login.html" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Logout</a>
+             
+           </div>
+    </nav>
+</div>
+ <!-- Sidebar -->
+
+ <div id="sidebar">&nbsp;
+     <img src="img/blueicon.jpg" alt="User Profile Icon" style="width: 70px; height: 70px; border-radius: 50%; margin:26px;">
+     <div class="sidebar-content">
+         <span class="close-btn" onclick="closeNav()">&times;</span>
+        
+         <p>Welcome, User&nbsp;&nbsp;</p>
+         <ul class="menu">
+         <li><a class="linker" href="#feedback">Contact</a></li>
+             <li><a class="linker" href="viewbookings.html">Bookings</a></li>
+             <li><a class="linker" href="#setings" class="drop-text">Settings</a></li>
+         
+             <li><a class="linker" href="loginadmin.html">Admin</a></li>
+             <li><a class="linker" href="login.html" class="drop-text">Logout</a></li></ul>
+         </ul>
+     </div>
+ </div>
+ <!-- //Sidebar -->
+<body>
+<br><br><br><br>
+
+    <!-- Your booking form HTML here -->
+    <!-- This form is displayed when the page is loaded and also after the search is performed -->
+    <div class="container">
+        <h2 class="mb-4">Search Routes</h2>
+        <form class="row g-3">
+        <div class="col-md-4">
+                <label for="route_date" class="form-label">Date:</label>
+                <input type="date" id="route_date" name="route_date" required class="form-control" value="<?php echo htmlspecialchars($selectedDate); ?>">
+            </div>
+            <div class="col-md-4">
+                <label for="from_location" class="form-label">From:</label>
+                <select id="from_location" name="from_location" required class="form-select">
+                 <!-- Options for from locations -->
+                 <option value="Vytila">Vytila</option>
+                 <option value="Tripunithara">Tripunithara</option>
+                 <option value="Vaikom">Vaikom</option>
+                  </select>
+
+            </div>
+            <div class="col-md-4">
+                <label for="to_location" class="form-label">To:</label>
+                <select id="to_location" name="to_location" required class="form-select">
+                    <!-- Options for to locations -->
+                    <!-- Options for from locations -->
+                    <option value="Vytila">Vytila</option>
+                    <option value="Tripunithara">Tripunithara</option>
+                    <option value="Vaikom">Vaikom</option>
+                </select>
+            </div>
+           
+            <div class="col-12">
+                <button type="submit" name="search_routes" class="btn btn-primary">Search Routes</button>
+            </div>
+        </form>
+        <br>
+        <div>
+            <!-- Display search results -->
+            <h3 class='mt-4'>Available Routes:</h3>
+            <div class='route'>
+                <h4 class='mb-4'>Route Details:</h4>
+                <p>RouteID: 12345<br>
+                From: Vytila<br>
+                To: Vaikom<br>
+                Arrival Time at From Location: 09:00 AM</p>
+            </div>
+        
+            <!-- Display available boats -->
+            <h4 class='mb-4'>Available Boats:</h4>
+            <div class='container-fluid feature py-5'>
+                <div class='row g-4'>
+                    <div class='col-md-12 col-lg-12 col-xl-12 wow fadeInUp' data-wow-delay='0.1s'>
+                        <div class='card feature-item p-4'>
+                            <div class='feature-icon mb-4'>
+                                <div class='p-3 d-inline-flex bg-white rounded'>
+                                    <img src='img/boat4.jpeg' alt='Boat Image' style='width: 100px; height: auto;'>
+                                </div>
+                            </div>
+                            <div class='feature-content'>
+                                <h5 class='mb-4'>Sunrise Boat</h5>
+                                <p class='mb-0'>Seats Available: 12/20<br>
+                                    Arrival at Vytila: 09:00 AM
+                                </p>
+                                <a href='#' class='btn btn-primary mt-3'>Book Seats</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-12 col-lg-12 col-xl-12 wow fadeInUp' data-wow-delay='0.2s'>
+                        <div class='card feature-item p-4'>
+                            <div class='feature-icon mb-4'>
+                                <div class='p-3 d-inline-flex bg-white rounded'>
+                                    <img src='img/boat4.jpeg' alt='Boat Image' style='width: 100px; height: auto;'>
+                                </div>
+                            </div>
+                            <div class='feature-content'>
+                                <h5 class='mb-4'>Sunset Cruiser</h5>
+                                <p class='mb-0'>Seats Available: 8/15<br>
+                                    Arrival at Vytila: 09:30 AM
+                                </p>
+                                <a href='#' class='btn btn-primary mt-3'>Book Seats</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-12 col-lg-12 col-xl-12 wow fadeInUp' data-wow-delay='0.3s'>
+                        <div class='card feature-item p-4'>
+                            <div class='feature-icon mb-4'>
+                                <div class='p-3 d-inline-flex bg-white rounded'>
+                                    <img src='img/boat4.jpeg' alt='Boat Image' style='width: 100px; height: auto;'>
+                                </div>
+                            </div>
+                            <div class='feature-content'>
+                                <h5 class='mb-4'>Lake Explorer</h5>
+                                <p class='mb-0'>Seats Available: 10/10<br>
+                                    Arrival at Vytila: 10:00 AM
+                                </p>
+                                <a href='#' class='btn btn-primary mt-3'>Book Seats</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Close row -->
+          </div></div></div>
+        
+
+    <!-- Bootstrap JS -->
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+         <!-- Footer Start -->
+         <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Waterway</h4>
+                            <p>eamless travel experiences at your fingertips. Join us on a journey of discovery and let Kerala's allure captivate you!"
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-share fa-2x text-white me-2"></i>
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Quick Links</h4>
+                            <a href="feedback.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                            <a href="aboutus.html"><i class="fas fa-angle-right me-2"></i> Why Us?</a>
+                            <a href="blog.html"><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
+                            <a href="team.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Waterway Services</h4>
+                            <a href=""><i class="fas fa-angle-right me-2"></i>Public Transportation</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Schedule Information</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Feed us option</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Accessibility Services</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Various Locations</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Customer Service Support</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Contact Info</h4>
+                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, Kerala, INDIA</a>
+                            <a href=""><i class="fas fa-envelope me-2"></i> deepakjoshy17@gmail.com</a>
+                            <a href=""><i class="fas fa-envelope me-2"></i> enquirieswaterway@gmail.com</a>
+                            <a href=""><i class="fas fa-phone me-2"></i> +91 9497384572</a>
+                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +07 210 699</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Waterway</a>, © 2024 . All rights reserved |.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Deepak Joshy</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+          <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+        <script>
+            // Function to open the sidebar
+            function openNav() {
+                document.getElementById("sidebar").style.left = "0";
+            }
+    
+            // Function to close the sidebar
+            function closeNav() {
+                document.getElementById("sidebar").style.left = "-250px";
+            }
+    
+            // Add event listener to profile icon button
+            document.getElementById("logo").addEventListener("click", function() {
+                openNav();
+            });
+        </script>
+
+</body>
+
+</html>
