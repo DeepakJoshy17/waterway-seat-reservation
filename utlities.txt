@@ -1,0 +1,96 @@
+style seat
+        .boat-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f5f5f5; /* Light gray background for the boat */
+            padding: 30px;
+            padding-top: 120px; /* Add space for the boat name */
+            padding-bottom: 50px; /* Padding at the bottom */
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* Ensures that the pseudo-elements don't overflow */
+            border-radius: 50% 50% 0 0; /* Curved top */
+        }
+
+        .boat-container::after {
+            content: '';
+            position: absolute;
+            bottom: -100px; /* Increase distance from the bottom of the container */
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 160px solid transparent; /* Adjust for a wider curve */
+            border-right: 160px solid transparent; /* Adjust for a wider curve */
+            border-top: 100px solid #f5f5f5; /* Increase height for a larger curve */
+            border-radius: 0 0 160px 160px; /* Larger radius for a more pronounced curve */
+            transform: translateX(-50%);
+        }
+
+        .boat-name {
+            background: #15b9d9 ; /* Boat name background color */
+            color: white;
+            padding: 5px;
+            margin-top:20px;
+            border-radius: 5px;
+            font-size: 1.5em;
+            font-weight: bold;
+            position: absolute;
+            top: 30px; /* Adjust position */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10; /* Ensure it's above other elements */
+        }
+
+        .seat {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            line-height: 40px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .seat:hover {
+            transform: scale(1.5);
+            background-color: #202428;
+            color: white;
+            font-weight: bold;
+        }
+
+        .seat.selected {
+            background-color: #38c4df;
+            color: white;
+            font-weight: bold;
+        }
+
+        .available {
+            background-color: white;
+            color: #202428;
+            font-weight: bold;
+        }
+
+        .booked {
+            background-color: lightgrey;
+            color: white;
+            font-weight: bold;
+        }
+
+        .gap {
+            display: inline-block;
+            width: 20px;
+            height: 40px;
+            margin: 5px;
+        }
+
+        .seat-row {
+            margin-bottom: 10px;
+        }
+        style seat end
